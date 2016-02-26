@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+    <customproductlist_index_index>
+        <reference name="head">
+            <!-- Meta Description -->
+            <action method="setDescription">
+                <value helper="customproductlist/data/getCustomMetaDesc" />
+            </action>
+            
+            <!-- Meta Keywords -->
+            <action method="setKeywords">
+                <value helper="customproductlist/data/getCustomMetaKeyword" />
+            </action>
+            
+            <!-- Title -->
+            <action method="setTitle">
+                <value helper="customproductlist/data/getCustomtitle" />
+                <!-- <title>Custom Product List</title> -->
+            </action>
+        </reference>
+        
+        <reference name="root">
+            <action method="setTemplate">            
+                <value helper="customproductlist/data/CustomTemplate" />
+                <!-- <template>page/1column.phtml</template> -->
+            </action>
+        </reference>
+
+        <reference name="content">
+            <block type="catalog/product_list" name="product_list" template="catalog/product/list.phtml">
+                <block type="core/text_list" name="product_list.name.after" as="name.after" />
+                <block type="core/text_list" name="product_list.after" as="after" />
+                <block type="catalog/product_list_toolbar" name="product_list_toolbar" template="catalog/product/list/toolbar.phtml">
+                    <block type="page/html_pager" name="product_list_toolbar_pager"/>
+                </block>
+                
+                <action method="setToolbarBlockName">
+                    <name>product_list_toolbar</name>
+                </action>
+                
+                <action method="setCollection">
+                    <value helper="customproductlist/getCustomProductCollection" />
+                </action>
+                
+                <action method="setAvailableOrders">
+                    <value helper="customproductlist/getSortingAvailableOrders" />
+                </action>
+                
+                <action method="setSortBy">
+                    <value helper="customproductlist/data/getCustomSortBy" />
+                    <!-- <value>price</value> -->
+                </action>
+                
+                <action method="setDefaultDirection">
+                    <value helper="customproductlist/data/getCustomDirection" />
+                    <!-- <value>asc</value> -->
+                </action>
+                
+                <action method="setColumnCount">
+                    <value helper="customproductlist/data/getCustomColumnCount" />                
+                    <!-- <coulumn>5</coulumn> -->
+                </action>
+                
+            </block>
+        </reference>
+    </customproductlist_index_index>
+</layout>

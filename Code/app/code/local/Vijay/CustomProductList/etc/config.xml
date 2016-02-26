@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Vijay_CustomProductList>
+            <version>1.0.0</version>
+        </Vijay_CustomProductList>
+    </modules>
+    <frontend>
+        <routers>
+            <customproductlist>
+                <use>standard</use>
+                <args>
+                    <module>Vijay_CustomProductList</module>
+                    <frontName>customproductlist</frontName>
+                </args>
+            </customproductlist>
+        </routers>
+        <layout>
+            <updates>
+                <customproductlist>
+                    <file>vijay/customproductlist.xml</file>
+                </customproductlist>
+            </updates>
+        </layout>
+    </frontend>    
+    <global>
+        <models>
+            <customproductlist>
+                <class>Vijay_CustomProductList_Model</class>
+            </customproductlist>
+        </models>
+        <helpers>
+            <customproductlist>
+                <class>Vijay_CustomProductList_Helper</class>
+            </customproductlist>
+        </helpers>
+    </global>
+	<default>
+		<customproductlist_tab>
+			<customproductlist_setting>
+				<customproductlist_layouts>one_column</customproductlist_layouts>
+				<customproductlist_categorys>3</customproductlist_categorys>
+				<customproductlist_title>Custom Product List</customproductlist_title>
+				<customproductlist_sorting>price</customproductlist_sorting>
+				<customproductlist_direction>asc</customproductlist_direction>
+				<customproductlist_columncount>6</customproductlist_columncount>
+			</customproductlist_setting>
+		</customproductlist_tab>
+	</default>	
+</config>
